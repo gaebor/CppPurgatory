@@ -1,7 +1,7 @@
 CPP=cl
 FLAGS=
 
-all: clean dir const_list class_inside_class operator_order
+all: clean dir const_list class_inside_class operator_order array
 
 dir:
 	IF exist win ( echo ) ELSE ( MD win)
@@ -17,3 +17,6 @@ class_inside_class: src/class_inside_class.cpp
 
 operator_order: src/operator_order.cpp
 	$(CPP) $(FLAGS) /Fo:win/operator_order.obj src/operator_order.cpp /link /OUT:win/operator_order.exe
+	
+array: src/array.cpp
+	$(CPP) $(FLAGS) /Fo:win/array.obj src/array.cpp /link /OUT:win/array.exe

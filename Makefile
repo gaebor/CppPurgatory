@@ -1,7 +1,7 @@
 CPP=g++
 FLAGS=--std=c++11
 
-all: clean dir const_list class_inside_class operator_order
+all: clean dir const_list class_inside_class operator_order array
 
 dir:
 	mkdir -p lin
@@ -17,3 +17,6 @@ class_inside_class: src/class_inside_class.cpp
 	
 operator_order: src/operator_order.cpp
 	$(CPP) $(FLAGS) src/operator_order.cpp -o lin/operator_order
+
+array: src/array.cpp
+	$(CPP) $(FLAGS) src/array.cpp -o lin/array
