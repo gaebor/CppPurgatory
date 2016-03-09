@@ -11,8 +11,8 @@ __Feel free to contribute with more satanic examples!
 Or with a proper explanation/fix for these example. Or tell me more compiler-specific curiosities.__
 
 ## Compile
-The very same code compiles with different makefiles.
+The very same code compiles with different makefiles (or _not_, depending on the example).
 * Unix (`g++`)
  * `make`
-* Windows (`cl`): in `cmd` locate and run `vcvarsall.bat` (usually under _C:\Program Files (x86)\Microsoft Visual Studio 99.9\VC_), then compile with
+* Windows (`cl`): in command line locate and run `vcvarsall.bat` (usually under _C:\Program Files (x86)\Microsoft Visual Studio 99.9\VC_), then compile with
  * `nmake /F Makefile.mak`
