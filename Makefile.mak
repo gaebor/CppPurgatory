@@ -1,7 +1,9 @@
 CPP=cl
-FLAGS=
+FLAGS=/EHsc
 
-all: clean dir const_list class_inside_class operator_order array
+all: clean dir const_list class_inside_class operator_order array rvalue
+
+right: clean dir const_list class_inside_class operator_order rvalue
 
 dir:
 	IF exist win ( echo ) ELSE ( MD win)
@@ -20,3 +22,6 @@ operator_order: src/operator_order.cpp
 	
 array: src/array.cpp
 	$(CPP) $(FLAGS) /Fo:win/array.obj src/array.cpp /link /OUT:win/array.exe
+
+rvalue: src/rvalue.cpp
+	$(CPP) $(FLAGS) /Fo:win/rvalue.obj src/rvalue.cpp /link /OUT:win/rvalue.exe
