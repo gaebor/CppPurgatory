@@ -2,10 +2,10 @@
 /* assigning an rvalue to a reference                                   */
 /************************************************************************/
 /************************************************************************/
-/* As far as I know, assinging an rvalue to a reference                 */
+/* As far as I know, assigning an rvalue to a reference                 */
 /* calls a copy constructor.                                            */
-/* In row 19, everything works fine,                                    */
-/* but in row 20, an extra copy constructor is called                   */
+/* In row 21, everything works fine,                                    */
+/* but in row 22, an extra copy constructor is called                   */
 /* with gcc, this won't compile                                         */
 /************************************************************************/
 
