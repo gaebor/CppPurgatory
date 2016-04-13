@@ -4,8 +4,11 @@
 /* Const objects in stl containers                                      */
 /************************************************************************/
 /************************************************************************/
-/* In Visual C++ it works                                               */
-/* But in g++ I have never been able to make something like this work   */
+/* In Visual Studio 2013 it works                                       */
+/* In g++ , it doesn't                                                  */
+/* As @ngg pointed out, this is forbidden per standard.                 */
+/* I don't know why Visual Studio allowed it,                           */
+/* but in Visual Studio 2013 it is forbidden                            */
 /************************************************************************/
 
 int main(int argc, char* argv[])
