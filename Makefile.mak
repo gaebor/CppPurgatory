@@ -12,16 +12,16 @@ clean:
 	del /Q win
 	
 const_list: src/const_list.cpp
-	$(CPP) $(FLAGS) /Fo:win/const_list.obj src/const_list.cpp /link /OUT:win/const_list.exe
+	$(CPP) $(FLAGS) /Fowin/const_list.obj src/const_list.cpp /link /OUT:win/const_list.exe
 
 class_inside_class: src/class_inside_class.cpp
-	$(CPP) $(FLAGS) /Fo:win/class_inside_class.obj src/class_inside_class.cpp /link /OUT:win/class_inside_class.exe
+	$(CPP) $(FLAGS) /Fowin/class_inside_class.obj src/class_inside_class.cpp /link /OUT:win/class_inside_class.exe
 
 operator_order: src/operator_order.cpp
-	$(CPP) $(FLAGS) /Fo:win/operator_order.obj src/operator_order.cpp /link /OUT:win/operator_order.exe
+	$(CPP) $(FLAGS) /Fowin/operator_order.obj src/operator_order.cpp /link /OUT:win/operator_order.exe
 	
 array: src/array.cpp
-	$(CPP) $(FLAGS) /Fo:win/array.obj src/array.cpp /link /OUT:win/array.exe
+	$(CPP) $(FLAGS) /Fowin/array.obj src/array.cpp /link /OUT:win/array.exe
 
 rvalue: src/rvalue.cpp
-	$(CPP) $(FLAGS) /Fo:win/rvalue.obj src/rvalue.cpp /link /OUT:win/rvalue.exe
+	$(CPP) $(FLAGS) /Fowin/rvalue.obj src/rvalue.cpp /link /OUT:win/rvalue.exe
