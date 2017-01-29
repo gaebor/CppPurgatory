@@ -1,27 +1,19 @@
-CPP=g++
-FLAGS=--std=c++11
+CFLAGS := --std=c++11 -Wfatal-errors
+CPP := g++
 
-programs = const_list class_inside_class operator_order array rvalue
-all: clean dir $(programs)
-right: clean dir operator_order array
+SRCS := $(wildcard src/*.cpp)
+PRGS := $(patsubst src/%.cpp,%,$(SRCS))
+
+default: right
 
 dir:
 	mkdir -p lin
 
 clean:
 	rm -Rf lin
-	
-const_list: src/const_list.cpp
-	$(CPP) $(FLAGS) src/const_list.cpp -o lin/const_list
 
-class_inside_class: src/class_inside_class.cpp
-	$(CPP) $(FLAGS) src/class_inside_class.cpp -o lin/class_inside_class
-	
-operator_order: src/operator_order.cpp
-	$(CPP) $(FLAGS) src/operator_order.cpp -o lin/operator_order
+all : clean dir $(PRGS)
+right: clean dir operator_order array
 
-array: src/array.cpp
-	$(CPP) $(FLAGS) src/array.cpp -o lin/array
-
-rvalue: src/rvalue.cpp
-	$(CPP) $(FLAGS) src/rvalue.cpp -o lin/rvalue
+% :: src/%.cpp
+	$(CPP) $(CFLAGS) $< -o lin/$@

@@ -1,27 +1,27 @@
-CPP=cl
-FLAGS=/EHsc
+CPPFLAGS=/EHsc -nologo
 
-all: clean dir const_list class_inside_class operator_order array rvalue
+right: clean dir template_order const_list class_inside_class operator_order rvalue
 
-right: clean dir const_list class_inside_class operator_order rvalue
+all: clean dir         \
+    const_list         \
+    class_inside_class \
+    operator_order     \
+    array              \
+    rvalue             \
+    template_order
+
+{src\}.cpp{win\}.exe:
+	$(CPP) $(CPPFLAGS) /Fo$*.obj $< /link /OUT:$@
 
 dir:
 	IF exist win ( echo ) ELSE ( MD win)
 
 clean:
 	del /Q win
-	
-const_list: src/const_list.cpp
-	$(CPP) $(FLAGS) /Fowin/const_list.obj src/const_list.cpp /link /OUT:win/const_list.exe
 
-class_inside_class: src/class_inside_class.cpp
-	$(CPP) $(FLAGS) /Fowin/class_inside_class.obj src/class_inside_class.cpp /link /OUT:win/class_inside_class.exe
-
-operator_order: src/operator_order.cpp
-	$(CPP) $(FLAGS) /Fowin/operator_order.obj src/operator_order.cpp /link /OUT:win/operator_order.exe
-	
-array: src/array.cpp
-	$(CPP) $(FLAGS) /Fowin/array.obj src/array.cpp /link /OUT:win/array.exe
-
-rvalue: src/rvalue.cpp
-	$(CPP) $(FLAGS) /Fowin/rvalue.obj src/rvalue.cpp /link /OUT:win/rvalue.exe
+const_list: win\const_list.exe
+class_inside_class: win\class_inside_class.exe
+operator_order: win\operator_order.exe
+array: win\array.exe	
+rvalue: win\rvalue.exe
+template_order: win\template_order.exe
