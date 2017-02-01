@@ -13,7 +13,7 @@ clean:
 	rm -Rf lin
 
 all : clean dir $(PRGS)
-right: clean dir operator_order array
+right: clean dir operator_order array pointer_play
 
 % :: src/%.cpp
 	$(CPP) $(CFLAGS) $< -o lin/$@
