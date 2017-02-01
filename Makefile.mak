@@ -1,16 +1,12 @@
 CPPFLAGS=/EHsc -nologo
 
-right: clean dir template_order const_list class_inside_class operator_order rvalue pointer_play 
+right: clean dir   \
+    template_order const_list class_inside_class operator_order \
+    rvalue pointer_play template_inheritance 
 
 all: clean dir         \
-    const_list         \
-    class_inside_class \
-    operator_order     \
-    array              \
-    rvalue             \
-    template_order     \
-    macro_comma        \
-    pointer_play
+    template_order const_list class_inside_class operator_order \
+    rvalue pointer_play template_inheritance array macro_comma
 
 {src\}.cpp{win\}.exe:
 	$(CPP) $(CPPFLAGS) /Fo$*.obj $< /link /OUT:$@
@@ -29,3 +25,4 @@ rvalue: win\rvalue.exe
 template_order: win\template_order.exe
 macro_comma: win\macro_comma.exe
 pointer_play: win\pointer_play.exe
+template_inheritance: win\template_inheritance.exe
