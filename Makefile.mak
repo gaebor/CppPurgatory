@@ -6,7 +6,7 @@ right: clean dir   \
 
 all: clean dir         \
     template_order const_list class_inside_class operator_order \
-    rvalue pointer_play template_inheritance array macro_comma
+    rvalue pointer_play template_inheritance array macro_comma thread_local
 
 {src\}.cpp{win\}.exe:
 	$(CPP) $(CPPFLAGS) /Fo$*.obj $< /link /OUT:$@
@@ -26,3 +26,4 @@ template_order: win\template_order.exe
 macro_comma: win\macro_comma.exe
 pointer_play: win\pointer_play.exe
 template_inheritance: win\template_inheritance.exe
+thread_local: win\thread_local.exe

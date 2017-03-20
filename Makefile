@@ -1,10 +1,10 @@
-CFLAGS := --std=c++11 -Wfatal-errors
+CFLAGS := --std=c++11 -Wfatal-errors -pthread
 CPP := g++
 
 SRCS := $(wildcard src/*.cpp)
 PRGS := $(patsubst src/%.cpp,%,$(SRCS))
 
-right: clean dir operator_order array pointer_play
+right: clean dir operator_order array pointer_play thread_local
 
 dir:
 	mkdir -p lin
