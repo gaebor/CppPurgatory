@@ -5,7 +5,7 @@ SRCS := $(wildcard src/*.cpp)
 PRGS := $(patsubst src/%.cpp,%,$(SRCS))
 
 right: clean dir operator_order array pointer_play thread_local ambiguity \
-    parameter_precedence
+    parameter_precedence static_cast
 
 dir:
 	mkdir -p lin

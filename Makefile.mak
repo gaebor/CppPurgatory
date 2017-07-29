@@ -3,12 +3,12 @@ CPPFLAGS=/EHsc /nologo
 right: clean dir   \
     template_order class_inside_class operator_order \
     rvalue pointer_play template_inheritance thread_local \
-    template_error ambiguity parameter_precedence
+    template_error ambiguity parameter_precedence static_cast
 
 all: clean dir         \
     template_order const_list class_inside_class operator_order \
     rvalue pointer_play template_inheritance array macro_comma thread_local \
-    template_error ambiguity parameter_precedence
+    template_error ambiguity parameter_precedence static_cast
 
 {src\}.cpp{win\}.exe::
 	$(CPP) $(CPPFLAGS) /Fo"src/" $< /Fe"win/"
@@ -20,6 +20,7 @@ clean:
 	del /Q win
 
 ambiguity: win\ambiguity.exe
+static_cast: win\static_cast.exe
 parameter_precedence: win\parameter_precedence.exe
 const_list: win\const_list.exe
 class_inside_class: win\class_inside_class.exe
