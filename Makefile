@@ -4,7 +4,8 @@ CPP := g++
 SRCS := $(wildcard src/*.cpp)
 PRGS := $(patsubst src/%.cpp,%,$(SRCS))
 
-right: clean dir operator_order array pointer_play thread_local ambiguity
+right: clean dir operator_order array pointer_play thread_local ambiguity \
+    parameter_precedence
 
 dir:
 	mkdir -p lin
