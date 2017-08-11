@@ -3,12 +3,13 @@ CPPFLAGS=/EHsc /nologo
 right: clean dir   \
     template_order class_inside_class operator_order \
     rvalue pointer_play template_inheritance thread_local \
-    template_error ambiguity parameter_precedence static_cast
+    template_error ambiguity parameter_precedence static_cast \
+	static_template
 
 all: clean dir         \
     template_order const_list class_inside_class operator_order \
     rvalue pointer_play template_inheritance array macro_comma thread_local \
-    template_error ambiguity parameter_precedence static_cast
+    template_error ambiguity parameter_precedence static_cast static_template
 
 {src\}.cpp{win\}.exe::
 	$(CPP) $(CPPFLAGS) /Fo"src/" $< /Fe"win/"
@@ -33,3 +34,4 @@ pointer_play: win\pointer_play.exe
 template_inheritance: win\template_inheritance.exe
 thread_local: win\thread_local.exe
 template_error: win\template_error.exe
+static_template: win\static_template.exe
