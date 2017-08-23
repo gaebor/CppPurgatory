@@ -6,6 +6,10 @@
 /* but if you replace the function Get with the static version          */
 /* then it is OK                                                        */
 /* just remove the definition of Get and use the second row in main     */
+/*                                                                      */
+/* The behaviour is the same for non-static members                     */
+/*  inherited from a template class                                     */
+/* the compiler just doesn't see the inherited member                   */
 /************************************************************************/
 
 #include <stddef.h>
@@ -22,7 +26,7 @@ struct ChildClass : AbstractClass<T*>
 {
     static size_t Get()
     {
-        return offset;
+        return offset; // this->offset
     }
 };
 
