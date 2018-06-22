@@ -4,7 +4,9 @@ GCC 5.4.0 doesn't
 
 gcc thinks that "t.g<b>" is an "operator<" between a member function and a bool
 rather then template specialization.
-Interesting enough if f is not a template then it compiles OK
+Requires "t.template g<b>" !
+
+https://stackoverflow.com/questions/610245/where-and-why-do-i-have-to-put-the-template-and-typename-keywords
 ******************/
 struct C
 {
