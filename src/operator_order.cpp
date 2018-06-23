@@ -16,6 +16,11 @@
 /* In g++ this very example returns 1                                   */
 /* In Visual C++ this returns 0                                         */
 /************************************************************************/
+/************************************************************************/
+/* REMEDY not the same thing but you may want something like this:      */
+/*                                                                      */
+/* m.emplace(0, m.size());                                              */
+/************************************************************************/
 
 int main(int argc, char* argv[])
 {
