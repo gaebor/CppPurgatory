@@ -1,11 +1,11 @@
-CFLAGS := --std=c++11 -Wfatal-errors -pthread
+CFLAGS := --std=c++11 -Wfatal-errors -pthread -Wall
 CPP := g++
 
 SRCS := $(wildcard src/*.cpp)
 PRGS := $(patsubst src/%.cpp,%,$(SRCS))
 
 right: clean dir operator_order array pointer_play thread_local ambiguity \
-    parameter_precedence static_cast tls
+    parameter_precedence static_cast tls template_static_const
 
 dir:
 	mkdir -p lin

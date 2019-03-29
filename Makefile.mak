@@ -1,4 +1,4 @@
-CPPFLAGS=/EHsc /nologo
+CPPFLAGS=/EHsc /nologo /W4
 
 right: clean dir   \
     template_order class_inside_class operator_order \
@@ -10,7 +10,7 @@ all: clean dir         \
     template_order const_list class_inside_class operator_order \
     rvalue pointer_play template_inheritance array macro_comma thread_local \
     template_error ambiguity parameter_precedence static_cast static_template \
-    map_copy template_syntax tls
+    map_copy template_syntax tls template_static_const
 
 {src\}.cpp{win\}.exe::
 	$(CPP) $(CPPFLAGS) /Fo"src/" $< /Fe"win/"
@@ -39,3 +39,4 @@ static_template: win\static_template.exe
 map_copy: win\map_copy.exe
 template_syntax: win\template_syntax.exe
 tls: win\tls.exe
+template_static_const: win\template_static_const.exe
