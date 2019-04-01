@@ -10,7 +10,7 @@ all: clean dir         \
     template_order const_list class_inside_class operator_order \
     rvalue pointer_play template_inheritance array macro_comma thread_local \
     template_error ambiguity parameter_precedence static_cast static_template \
-    map_copy template_syntax tls template_static_const
+    map_copy template_syntax tls template_static_const thread_argument
 
 {src\}.cpp{win\}.exe::
 	$(CPP) $(CPPFLAGS) /Fo"src/" $< /Fe"win/"
@@ -40,3 +40,4 @@ map_copy: win\map_copy.exe
 template_syntax: win\template_syntax.exe
 tls: win\tls.exe
 template_static_const: win\template_static_const.exe
+thread_argument: win\thread_argument.exe
