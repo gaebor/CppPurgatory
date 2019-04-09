@@ -1,9 +1,9 @@
 /*****************************************************
 This is actually the same in Visual C++ and GCC
-but it is interesting
+and also standard comliant (AFAIK) but it is mind-boggling for me.
 
-Inside a member function when a member has the same name as a function parameter
-then the member attribute has a lower precedence than the function parameter
+The problem is that you can create an object but never call its destructor (this is not that surprising).
+What is even worse: you can call a destructor for an object which has never been constructed!
 *****************************************************/
 
 #include <iostream>
