@@ -4,14 +4,15 @@ right: clean dir   \
     template_order class_inside_class operator_order \
     rvalue pointer_play template_inheritance thread_local \
     template_error ambiguity parameter_precedence static_cast \
-	static_template map_copy template_syntax tls constructor_destructor
+	static_template map_copy template_syntax tls constructor_destructor \
+    static_constexpr
 
 all: clean dir         \
     template_order const_list class_inside_class operator_order \
     rvalue pointer_play template_inheritance array macro_comma thread_local \
     template_error ambiguity parameter_precedence static_cast static_template \
     map_copy template_syntax tls template_static_const thread_argument \
-    constructor_destructor
+    constructor_destructor static_constexpr
 
 {src\}.cpp{win\}.exe::
 	$(CPP) $(CPPFLAGS) /Fo"src/" $< /Fe"win/"
@@ -43,3 +44,4 @@ tls: win\tls.exe
 template_static_const: win\template_static_const.exe
 thread_argument: win\thread_argument.exe
 constructor_destructor: win\constructor_destructor.exe
+static_constexpr: win\static_constexpr.exe
