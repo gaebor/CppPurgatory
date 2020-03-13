@@ -6,7 +6,7 @@ PRGS := $(patsubst src/%.cpp,%,$(SRCS))
 
 right: clean dir operator_order array pointer_play thread_local ambiguity \
     parameter_precedence static_cast tls template_static_const \
-    constructor_destructor
+    constructor_destructor hash_test ifconstexpr
 
 dir:
 	mkdir -p lin
